@@ -19,4 +19,4 @@ router.delete("/books/:id", (req, res) => {
     .catch(err => res.status(400).json(err));
 });
 
-modeul.exports = router;
+module.exports = router;
