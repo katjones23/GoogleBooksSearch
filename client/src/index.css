@@ -1,8 +1,12 @@
 body {
     background-image: url(./images/pexels-emily-768125.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto;
     margin: 0;
     padding: 0;
     background-position: top;
+}
+
+.btn {
+    border-radius: 0;
 }
