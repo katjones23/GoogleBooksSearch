@@ -1,13 +1,23 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// import Search from "./pages/Search";
+// import Saved from "./pages/Saved";
 import Nav from "./componenets/Nav"
 import Jumbotron from "./componenets/Jumbotron"
 
 function App() {
   return (
-    <div>
-      <Nav />
-      <Jumbotron />
-    </div>
+    <Router>
+      <div>
+        <Nav />
+        <Jumbotron />
+        <Switch>
+          {/* <Route exact path="/" component={Search} /> */}
+          {/* <Route exact path="/search" component={Search} /> */}
+          {/* <Route exact path="/saved" component={Saved} /> */}
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
