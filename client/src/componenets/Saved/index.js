@@ -1,6 +1,6 @@
 import React from "react";
 import ViewBtn from "../ViewBtn";
-import SaveBtn from "../SaveBtn";
+import DeleteBtn from "../DeleteBtn";
 import Image from "../Image";
 
 export function Saved({ children }) {
@@ -22,7 +22,7 @@ export function SavedItem({ title, authors, image, description }) {
                 </div>
                 <div className="col-4 offset-4">
                     <ViewBtn />
-                    {/* deletebtn */}
+                    <DeleteBtn />
                 </div>
             </div>
 
