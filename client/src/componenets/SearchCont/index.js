@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css"
 
-function Search(props) {
+function SearchCont(props) {
     return (
         <div className="container justify-content-center">
             <div className="searchCont">
@@ -20,4 +20,4 @@ function Search(props) {
     );
 }
 
-export default Search;
+export default SearchCont;

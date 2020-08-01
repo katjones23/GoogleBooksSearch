@@ -2,12 +2,15 @@ import React from "react";
 import ViewBtn from "../ViewBtn";
 import DeleteBtn from "../DeleteBtn";
 import Image from "../Image";
+import "./style.css"
 
-export function Saved({ children }) {
+export function SavedCont({ children }) {
     return (
-        <div className="container">
-            <h3>Saved Books</h3>
-            {children}
+        <div className="container justify-content-center">
+            <div className="savedCont">
+                <h3 className="savedHeader">Saved Books</h3>
+                {children}
+            </div>
         </div>
     );
 }
