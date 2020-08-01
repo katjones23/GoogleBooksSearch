@@ -3,16 +3,16 @@ import ViewBtn from "../ViewBtn";
 import SaveBtn from "../SaveBtn";
 import Image from "../Image";
 
-export function Results({ children }) {
+export function Saved({ children }) {
     return (
         <div className="container">
-            <h3>Results</h3>
+            <h3>Saved Books</h3>
             {children}
         </div>
     );
 }
 
-export function ResultsItem({ title, authors, image, description }) {
+export function SavedItem({ title, authors, image, description }) {
     return (
         <div className="container">
 
@@ -22,7 +22,7 @@ export function ResultsItem({ title, authors, image, description }) {
                 </div>
                 <div className="col-4 offset-4">
                     <ViewBtn />
-                    <SaveBtn />
+                    {/* deletebtn */}
                 </div>
             </div>
 
