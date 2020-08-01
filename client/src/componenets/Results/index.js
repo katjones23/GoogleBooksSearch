@@ -1,6 +1,7 @@
 import React from "react";
 import ViewBtn from "../ViewBtn";
 import SaveBtn from "../SaveBtn";
+import Image from "../Image";
 
 export function Results({ children }) {
     return <div className="container">{children}</div>;
@@ -28,7 +29,7 @@ export function ResultsItem({ title, authors, image, description }) {
 
             <div className="row">
                 <div className="col-3">
-                    {/* image */}
+                    <Image source={image} altTxt={title} />
                 </div>
                 <div className="col-9">
                     <p>{description}</p>
@@ -38,5 +39,3 @@ export function ResultsItem({ title, authors, image, description }) {
         </div>
     );
 }
-
-// title, authors, description, image, link
