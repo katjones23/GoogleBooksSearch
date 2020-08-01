@@ -1,0 +1,18 @@
+.searchCont {
+    border-radius: 0;
+    background-color: #eee;
+    padding: 2%;
+    margin-bottom: 5%;
+}
+
+.searchHeader {
+    margin-bottom: 5%;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+.searchBtn {
+    background-color: #ffce44;
+}

@@ -1,0 +1,10 @@
+.resultsCont {
+    border-radius: 0;
+    background-color: #eee;
+    padding: 2%;
+    margin-bottom: 5%;
+}
+
+.resultsHeader {
+    margin-bottom: 5%;
+}
