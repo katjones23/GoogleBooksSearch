@@ -1,19 +1,19 @@
 import React from "react";
 import Jumbotron from "../componenets/Jumbotron"
-import Search from "../componenets/Search"
+import SearchCont from "../componenets/SearchCont"
 import { Results, ResultsItem } from "../componenets/Results";
 
-function Books() {
+function Search() {
 
 
     return (
         <div>
             <Jumbotron />
-            <Search />
+            <SearchCont />
             <Results />
         </div>
     );
 }
 
 
-export default Books;
+export default Search;
