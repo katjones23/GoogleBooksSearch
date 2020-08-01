@@ -1,5 +1,6 @@
 import React from "react";
-import ViewBtn from "../ViewBtn"
+import ViewBtn from "../ViewBtn";
+import SaveBtn from "../SaveBtn";
 
 export function Results({ children }) {
     return <div className="container">{children}</div>;
@@ -15,7 +16,7 @@ export function ResultsItem({ title, authors, image, description }) {
                 </div>
                 <div className="col-4 offset-4">
                     <ViewBtn />
-                    {/* save button */}
+                    <SaveBtn />
                 </div>
             </div>
 
