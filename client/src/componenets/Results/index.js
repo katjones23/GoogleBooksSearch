@@ -21,13 +21,14 @@ export function ResultsItem({ previewLink, title, subtitle, authors, imageLinks,
         event.stopPropagation();
 
         window.open(previewLink);
-    }
+    };
 
     function handleSave(event) {
         event.stopPropagation();
 
         API.saveBook({
             title: title,
+            subtitle: subtitle,
             authors: authors,
             description: description,
             image: imageLinks.thumbnail,
@@ -38,8 +39,9 @@ export function ResultsItem({ previewLink, title, subtitle, authors, imageLinks,
             )
             .catch(err => console.log(err));
 
-    }
+    };
 
+    
     return (
         <div className="container">
 
