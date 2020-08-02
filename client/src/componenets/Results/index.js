@@ -15,8 +15,15 @@ export function Results({ children }) {
     );
 }
 
-export function ResultsItem({ title, subtitle, authors, imageLinks, description }) { 
+export function ResultsItem({ previewLink, title, subtitle, authors, imageLinks, description }) { 
     
+    console.log(previewLink)
+
+    function handleView(event) {
+        event.stopPropagation();
+
+        window.open(previewLink);
+    }
 
     return (
         <div className="container">
@@ -27,7 +34,7 @@ export function ResultsItem({ title, subtitle, authors, imageLinks, description 
                     <em>{subtitle}</em>
                 </div>
                 <div className="col-md-4 col-sm-12 offset-4 text-right">
-                    <ViewBtn />
+                    <ViewBtn onClick={handleView} />
                     <SaveBtn />
                 </div>
             </div>

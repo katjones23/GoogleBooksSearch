@@ -1,0 +1,11 @@
+.viewBtn {
+    background-color: #4c8bf5;
+    border-color: #4c8bf5;
+    margin-right: 1%;
+}
+
+.viewBtn:hover {
+    background-color: #1766ee;
+    border-color: #1766ee;
+    box-shadow: #1766ee;
+}

@@ -15,4 +15,10 @@
 
 .searchBtn {
     background-color: #ffce44;
+    border-color: #ffce44;
+}
+
+.searchBtn:hover {
+    background-color: #fabc11;
+    border-color: #fabc11;
 }
