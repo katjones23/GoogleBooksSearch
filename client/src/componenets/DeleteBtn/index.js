@@ -1,8 +1,9 @@
 import React from "react";
+import "./style.css"
 
 function DeleteBtn(props) {
     return (
-        <button onClick={props.handleDelete} type="button" className="btn btn-danger">Delete</button>
+        <button {...props} type="button" className="deleteBtn btn btn-primary">Delete</button>
     );
 }
 

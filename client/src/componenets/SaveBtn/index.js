@@ -1,8 +1,9 @@
 import React from "react";
+import "./style.css"
 
 function SaveBtn(props) {
     return (
-        <button onClick={props.handleSave} type="button" className="btn btn-primary">Save</button>
+        <button {...props} type="button" className="saveBtn btn btn-primary">Save</button>
     );
 }
 

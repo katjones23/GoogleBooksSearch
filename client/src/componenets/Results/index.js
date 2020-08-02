@@ -3,6 +3,7 @@ import ViewBtn from "../ViewBtn";
 import SaveBtn from "../SaveBtn";
 import Image from "../Image";
 import "./style.css"
+import API from "../../utils/API"
 
 export function Results({ children }) {
     return (
@@ -15,31 +16,57 @@ export function Results({ children }) {
     );
 }
 
-export function ResultsItem({ title, authors, image, description }) {
+export function ResultsItem({ previewLink, title, subtitle, authors, imageLinks, description }) {
+    function handleView(event) {
+        event.stopPropagation();
+
+        window.open(previewLink);
+    };
+
+    function handleSave(event) {
+        event.stopPropagation();
+
+        API.saveBook({
+            title: title,
+            subtitle: subtitle,
+            authors: authors,
+            description: description,
+            image: imageLinks.thumbnail,
+            link: previewLink
+        })
+            .then(res =>
+                alert(`${title} was added successfully!`)
+            )
+            .catch(err => console.log(err));
+
+    };
+
+    
     return (
         <div className="container">
 
             <div className="row">
-                <div className="col-4">
-                    <h3>{title}</h3>
+                <div className="col-md-4 col-sm-12">
+                    <h5>{title}</h5>
+                    <em>{subtitle}</em>
                 </div>
-                <div className="col-4 offset-4">
-                    <ViewBtn />
-                    <SaveBtn />
-                </div>
-            </div>
-
-            <div className="row">
-                <div className="col-4">
-                    <h5>Written By {authors}</h5>
+                <div className="col-md-4 col-sm-12 offset-4 text-right">
+                    <ViewBtn onClick={handleView} />
+                    <SaveBtn onClick={handleSave} />
                 </div>
             </div>
 
             <div className="row">
-                <div className="col-3">
-                    <Image source={image} altTxt={title} />
+                <div className="col-4">
+                    <p>Written By {authors.join(", ")}</p>
                 </div>
-                <div className="col-9">
+            </div>
+
+            <div className="row">
+                <div className="col-md-3 col-sm-12">
+                    <Image source={imageLinks.thumbnail} altTxt={title} />
+                </div>
+                <div className="col-md-9 col-sm-12">
                     <p>{description}</p>
                 </div>
             </div>

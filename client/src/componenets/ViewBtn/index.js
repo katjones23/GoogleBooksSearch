@@ -1,8 +1,9 @@
 import React from "react";
+import "./style.css"
 
 function ViewBtn(props) {
     return (
-        <button onClick={props.handleView} type="button" className="btn btn-primary">View</button>
+        <button {...props} type="button" className="viewBtn btn btn-primary">View</button>
     );
 }
 

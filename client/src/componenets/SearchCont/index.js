@@ -1,23 +1,32 @@
 import React from "react";
 import "./style.css"
 
-function SearchCont(props) {
+export function SearchCont({ children }) {
     return (
         <div className="container justify-content-center">
             <div className="searchCont">
                 <h3 className="searchHeader">Book Search</h3>
                 <form>
-                    <div className="form-group">
-                        <label for="searchBar">Book</label>
-                        <input type="text" className="form-control" id="searchBar" placeholder="Harry Potter"></input>
-                    </div>
-                    <div className="text-right">
-                        <button onClick={props.handleSearch} type="submit" className="btn searchBtn">Search</button>
-                    </div>
+                    {children}
                 </form>
             </div>
         </div>
     );
 }
 
-export default SearchCont;
+export function SearchInput(props) {
+    return (
+        <div className="form-group">
+            <label htmlFor="searchBar">Book</label>
+            <input {...props} type="text" className="form-control" id="searchBar" placeholder="Harry Potter" />
+        </div>
+    )
+};
+
+export function SearchBtn(props) {
+    return (
+        <div className="text-right">
+            <button {...props} type="submit" className="btn searchBtn">Search</button>
+        </div>
+    )
+};

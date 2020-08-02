@@ -1,0 +1,10 @@
+.saveBtn {
+    background-color: #1aa260;
+    border-color: #1aa260;
+    margin-left: 1%;
+}
+
+.saveBtn:hover {
+    background-color: #04a156;
+    border-color: #04a156;
+}
