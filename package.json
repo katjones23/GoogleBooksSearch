@@ -5,13 +5,14 @@
   "main": "server.js",
   "dependencies": {
     "axios": "^0.19.2",
-    "concurrently": "^5.2.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "if-env": "^1.0.4",
     "mongoose": "^5.9.27"
   },
   "devDependencies": {
+    "concurrently": "^5.2.0",
     "nodemon": "^2.0.4"
   },
   "scripts": {
@@ -19,6 +20,7 @@
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"

@@ -1,6 +1,6 @@
 import React from "react";
 import Jumbotron from "../componenets/Jumbotron"
-import { SavedCont, SavedItem } from "../componenets/SavedCont"
+import { SavedCont } from "../componenets/SavedCont"
 
 function Saved() {
 
