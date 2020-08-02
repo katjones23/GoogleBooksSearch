@@ -15,16 +15,18 @@ export function Results({ children }) {
     );
 }
 
-export function ResultsItem({ title, authors, imageLinks, description }) { 
+export function ResultsItem({ title, subtitle, authors, imageLinks, description }) { 
     
+
     return (
         <div className="container">
 
             <div className="row">
-                <div className="col-4">
-                    <h3>{title}</h3>
+                <div className="col-md-4 col-sm-12">
+                    <h5>{title}</h5>
+                    <em>{subtitle}</em>
                 </div>
-                <div className="col-4 offset-4">
+                <div className="col-md-4 col-sm-12 offset-4 text-right">
                     <ViewBtn />
                     <SaveBtn />
                 </div>
@@ -32,15 +34,15 @@ export function ResultsItem({ title, authors, imageLinks, description }) {
 
             <div className="row">
                 <div className="col-4">
-                    <h5>Written By {authors.join(", ")}</h5>
+                    <p>Written By {authors.join(", ")}</p>
                 </div>
             </div>
 
             <div className="row">
-                <div className="col-3">
+                <div className="col-md-3 col-sm-12">
                     <Image source={imageLinks.thumbnail} altTxt={title} />
                 </div>
-                <div className="col-9">
+                <div className="col-md-9 col-sm-12">
                     <p>{description}</p>
                 </div>
             </div>
