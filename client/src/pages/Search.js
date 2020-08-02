@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Jumbotron from "../componenets/Jumbotron"
 import { SearchCont, SearchInput, SearchBtn } from "../componenets/SearchCont"
-import { Results } from "../componenets/Results";
+import { Results, ResultsItem } from "../componenets/Results";
 import API from "../utils/API"
 
 function Search() {
@@ -16,10 +16,12 @@ function Search() {
     function handleSearch(event) {
         event.preventDefault();
 
-        API.searchBooks(search)
-            .then(res => {
+        let query = search.replace(/\s/g, "+")
+
+        API.searchBooks(query)
+            .then(res => {  
+                console.log(res.data)
                 setResults(res.data)
-                console.log(results)
             })
             .then(setSearch(""))
             .catch(err => console.log(err))
@@ -33,7 +35,17 @@ function Search() {
                 <SearchInput onChange={handleChange}/>
                 <SearchBtn onClick={handleSearch} />
             </SearchCont>
-            <Results />
+            {results.length ? (
+                <Results>
+                    {results.map(result => (
+                        <ResultsItem key={result.id} {...result.volumeInfo} />
+                    ))}
+                </Results>
+            ) : (
+                <Results>
+                    <h4>No Results Found!</h4>
+                </Results>
+            )}
         </div>
     );
 }

@@ -15,7 +15,8 @@ export function Results({ children }) {
     );
 }
 
-export function ResultsItem({ title, authors, image, description }) {
+export function ResultsItem({ title, authors, imageLinks, description }) { 
+    
     return (
         <div className="container">
 
@@ -31,13 +32,13 @@ export function ResultsItem({ title, authors, image, description }) {
 
             <div className="row">
                 <div className="col-4">
-                    <h5>Written By {authors}</h5>
+                    <h5>Written By {authors.join(", ")}</h5>
                 </div>
             </div>
 
             <div className="row">
                 <div className="col-3">
-                    <Image source={image} altTxt={title} />
+                    <Image source={imageLinks.thumbnail} altTxt={title} />
                 </div>
                 <div className="col-9">
                     <p>{description}</p>

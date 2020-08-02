@@ -6,11 +6,11 @@ const axios = require('axios').default;
 const key = process.env.API_KEY;
 const url = "https://www.googleapis.com/books/v1/volumes?q="
 
-router.route("/search")
+router.route("/search/:query")
     .post(function (req, res) {
-        axios.get(url + req + `&key=${key}`)
+        axios.get(url + req.params.query + `&key=${key}`)
             .then(function (response) {
-                res.json(response.data)
+                res.json(response.data.items)
             })
             .catch(function (err) {
                 console.log(err);

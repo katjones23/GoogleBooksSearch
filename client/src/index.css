@@ -1,7 +1,7 @@
 body {
     background-image: url(./images/pexels-emily-768125.jpg);
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: cover;
     margin: 0;
     padding: 0;
     background-position: top;
