@@ -3,6 +3,7 @@ import ViewBtn from "../ViewBtn";
 import SaveBtn from "../SaveBtn";
 import Image from "../Image";
 import "./style.css"
+import API from "../../utils/API"
 
 export function Results({ children }) {
     return (
@@ -15,14 +16,28 @@ export function Results({ children }) {
     );
 }
 
-export function ResultsItem({ previewLink, title, subtitle, authors, imageLinks, description }) { 
-    
-    console.log(previewLink)
-
+export function ResultsItem({ previewLink, title, subtitle, authors, imageLinks, description }) {
     function handleView(event) {
         event.stopPropagation();
 
         window.open(previewLink);
+    }
+
+    function handleSave(event) {
+        event.stopPropagation();
+
+        API.saveBook({
+            title: title,
+            authors: authors,
+            description: description,
+            image: imageLinks.thumbnail,
+            link: previewLink
+        })
+            .then(res =>
+                alert(`${title} was added successfully!`)
+            )
+            .catch(err => console.log(err));
+
     }
 
     return (
@@ -35,7 +50,7 @@ export function ResultsItem({ previewLink, title, subtitle, authors, imageLinks,
                 </div>
                 <div className="col-md-4 col-sm-12 offset-4 text-right">
                     <ViewBtn onClick={handleView} />
-                    <SaveBtn />
+                    <SaveBtn onClick={handleSave} />
                 </div>
             </div>
 

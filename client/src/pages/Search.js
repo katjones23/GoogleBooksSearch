@@ -19,8 +19,7 @@ function Search() {
         let query = search.replace(/\s/g, "+")
 
         API.searchBooks(query)
-            .then(res => {  
-                console.log(res.data)
+            .then(res => {
                 setResults(res.data)
             })
             .then(setSearch(""))
@@ -32,7 +31,7 @@ function Search() {
         <div>
             <Jumbotron />
             <SearchCont>
-                <SearchInput onChange={handleChange}/>
+                <SearchInput onChange={handleChange} />
                 <SearchBtn onClick={handleSearch} />
             </SearchCont>
             {results.length ? (
@@ -42,10 +41,10 @@ function Search() {
                     ))}
                 </Results>
             ) : (
-                <Results>
-                    <h4>No Results Found!</h4>
-                </Results>
-            )}
+                    <Results>
+                        <h4>No Results Found!</h4>
+                    </Results>
+                )}
         </div>
     );
 }
