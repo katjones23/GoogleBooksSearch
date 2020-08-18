@@ -21,6 +21,7 @@ function Search() {
         API.searchBooks(query)
             .then(res => {
                 setResults(res.data)
+                console.log(res.data)
             })
             .then(setSearch(""))
             .catch(err => console.log(err))
