@@ -4,6 +4,7 @@ import SaveBtn from "../SaveBtn";
 import Image from "../Image";
 import "./style.css"
 import API from "../../utils/API"
+import placeholder from "../../images/book-clipart.png"
 
 export function Results({ children }) {
     return (
@@ -41,7 +42,18 @@ export function ResultsItem({ previewLink, title, subtitle, authors, imageLinks,
 
     };
 
-    
+    let authorTxt = "";
+    let img = <Image source={placeholder} altTxt={title} />;
+
+    if (authors !== undefined) {
+        authorTxt = `Written by ${authors.join(", ")}`;
+    }
+
+    if (imageLinks !== undefined) {
+        img = <Image source={imageLinks.thumbnail} altTxt={title} />
+    }
+
+
     return (
         <div className="container">
 
@@ -58,13 +70,13 @@ export function ResultsItem({ previewLink, title, subtitle, authors, imageLinks,
 
             <div className="row">
                 <div className="col-4">
-                    <p>Written By {authors.join(", ")}</p>
+                    <p>{authorTxt}</p>
                 </div>
             </div>
 
             <div className="row">
                 <div className="col-md-3 col-sm-12">
-                    <Image source={imageLinks.thumbnail} altTxt={title} />
+                    {img}
                 </div>
                 <div className="col-md-9 col-sm-12">
                     <p>{description}</p>
